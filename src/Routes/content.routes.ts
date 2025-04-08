@@ -6,7 +6,7 @@ const contentRoute = express.Router();
 
 contentRoute.post("/content", userMiddleware, async (req, res) : Promise<void> => {
     try {
-        const { title,link, type } = req.body;
+        const { title,link,type,description } = req.body;
         const userId = req.userId; // No more TypeScript error
 
         if (!userId) {
@@ -18,6 +18,7 @@ contentRoute.post("/content", userMiddleware, async (req, res) : Promise<void> =
             title,
             link,
             type,
+            description,
             userId,
             tags: [],
         });

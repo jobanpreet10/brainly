@@ -4,6 +4,7 @@ const contentSchema = new Schema({
     title: String,
     link: String,
     type : String,
+    description: String,
     tags : 
         [{ type : mongoose.Types.ObjectId ,
         ref :'Tags' }],
